@@ -1,6 +1,6 @@
 from typing import Optional
 
-from beanie import Document
+from beanie import Document, Link
 
 
 # To hold context of the conversation
@@ -17,11 +17,11 @@ class Query(Document):
     query: str
     # initiated timestamp
     initiated_at: int
-    response: str
+    response: Optional[str]
     # respond timestamp
     responded_at: Optional[int]
     # link to the conversation
-    conversation_id: Conversation
+    conversation: Link[Conversation]
 
     class Settings:
         name = "queries"  # Collection name

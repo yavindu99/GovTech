@@ -15,3 +15,7 @@ async def init_db():
 
     conversion = Conversation(context="test", initiated_by="user", initiated_at=int(time.time()))
     await conversion.save()
+
+    query = Query(query="test", initiated_at=int(time.time()), response=None, responded_at=None,
+                  conversation=conversion)
+    await query.save()
