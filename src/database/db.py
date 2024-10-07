@@ -1,10 +1,8 @@
-import time
-
 from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from config.config import config as conf
-from src.document.documents import Conversation, Query
+from src.document.documents import Conversation
 
 
 async def init_db():

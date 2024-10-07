@@ -1,7 +1,6 @@
-from fastapi import HTTPException
+import openai
 
 from config.config import config as conf
-import openai
 
 
 class OpenAIClient:
