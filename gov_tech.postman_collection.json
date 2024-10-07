@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "26c52182-5d05-47cb-853b-1ed8968d3d01",
+		"name": "gov_tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7577435"
+	},
+	"item": [
+		{
+			"name": "conversations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/conversations/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"conversations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "conversation_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/conversations/6703494b22e4f8a2e1ccc5f5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"conversations",
+						"6703494b22e4f8a2e1ccc5f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_conversaion_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/conversations/6703492222e4f8a2e1ccc5f4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"conversations",
+						"6703492222e4f8a2e1ccc5f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start_convesation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Hi Say this is a test\",\r\n    \"conversation_id\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/queries",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"queries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit_convesation_by_id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"context\": \"Hi Say this is a test\",\r\n    \"initiated_by\": \"user123\",\r\n    \"initiated_at\": 1728274123,\r\n    \"queries\": [\r\n        {\r\n            \"query\": \"Hi Say this is a test\",\r\n            \"initiated_at\": 1728274123,\r\n            \"response\": \"This is a test.\",\r\n            \"responded_at\": 1728274123\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/conversations/67035ecb9c62a195f15af4ae",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"conversations",
+						"67035ecb9c62a195f15af4ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "continue_convesation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Hi Say this is a test\",\r\n    \"conversation_id\": \"6703494b22e4f8a2e1ccc5f5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/queries",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"queries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
