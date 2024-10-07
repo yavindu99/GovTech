@@ -11,7 +11,7 @@ async def init_db():
     db_name = conf.config['mongodb']['name']
 
     # Create Motor client
-    client = AsyncIOMotorClient(f"mongodb://{username}:{password}@localhost:27017")
+    client = AsyncIOMotorClient(f"mongodb://{username}:{password}@mongo:27017")
 
     # Init beanie with the Product document class
     await init_beanie(database=client[f"{db_name}"], document_models=[Conversation])

@@ -36,9 +36,9 @@ class Request(BaseModel):
 async def queries(request: Request):
     try:
         stream = open_ai_client.ask(request.message)
-        conversation = await Conversation.get(request.conversation_id)
-
-        if conversation is None:
+        if request.conversation_id != "":
+            conversation = await Conversation.get(request.conversation_id)
+        else:
             conversation = Conversation(context=request.message, initiated_by="user", initiated_at=int(time.time()),
                                         queries=[])
 
