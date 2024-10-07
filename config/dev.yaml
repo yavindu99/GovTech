@@ -1,0 +1,10 @@
+mongodb:
+  username:
+  password:
+  name:
+  host: mongo # docker name. change to localhost if not using docker
+
+open-ai:
+  org-id:
+  project-id:
+  api-key: 
