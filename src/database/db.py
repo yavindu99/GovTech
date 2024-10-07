@@ -16,11 +16,4 @@ async def init_db():
     client = AsyncIOMotorClient(f"mongodb://{username}:{password}@localhost:27017")
 
     # Init beanie with the Product document class
-    await init_beanie(database=client[f"{db_name}"], document_models=[Conversation, Query])
-
-    conversion = Conversation(context="test", initiated_by="user", initiated_at=int(time.time()))
-    await conversion.save()
-
-    query = Query(query="test", initiated_at=int(time.time()), response=None, responded_at=None,
-                  conversation=conversion)
-    await query.save()
+    await init_beanie(database=client[f"{db_name}"], document_models=[Conversation])
